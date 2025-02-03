@@ -1,3 +1,4 @@
+import java.util.Scanner;
 // Objectives:
 // ✅ Understand Kotlin variables (var, val) and data types
 // ✅ Learn how to write functions and call them
@@ -72,4 +73,37 @@ fun main() {
 val cars = arrayOf("Volvo", "BMW", "Ford", "Mazda")
 for (x in cars) {
   println(x)
+}
+
+
+// 💡 Bonus: Modify the program to take user input and display the results.
+fun add(x: Int?, y: Int?): Int {
+    if (x != null && y != null) {
+        return x + y
+    } else {
+        println("One of the inputs is null")
+        return 0
+    }
+}
+
+fun main() {
+    println("Your first number: ")
+    val num1 = readLine()?.toIntOrNull() 
+    println("Your second number: ")
+    val num2 = readLine()?.toIntOrNull()
+
+    val result = add(num1, num2)
+    println("The sum is: $result")
+}
+
+
+fun main() {
+    print("Enter a number: ")
+    val input = readLine()?.toIntOrNull() 
+
+    if (input != null) {
+        oddOrEven(input)
+    } else {
+        println("Invalid input! Please enter a valid number.")
+    }
 }
